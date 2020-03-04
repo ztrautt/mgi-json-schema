@@ -1,14 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
-    "title": "Material",
-    "description": "This form is for describing any measurable substance (e.g., sample, specimen, material, chemical, etc.), or a specific sup-sample (e.g., location on a larger artifact, sub-portion of a larger artifact, item within a collection of specimens, etc.).",
+    "title": "MaterialProcess",
+    "description": "This schema is for describing a process node in the processing history of a material.",
     "required": [
         "@id",
         "@context",
         "@type",
-        "phases",
-        "physical_state"
+        "requires"
     ],
     "definitions": {
         "QuantitativeValue": {
@@ -230,55 +229,96 @@
             "default": ""
         },
         "requires": {
-            "type": "string",
-                "title": "Process",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Process"
-                            ]
+            "type": "array",
+            "title": "Required Materials",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "title": "Required Material",
+                "properties": {
+                    "@type": {
+                        "type": "array",
+                        "default": [
+                            "HowToSupply",
+                            "mat:Material"
+                        ]
+                    },
+                    "material": {
+                        "type": "string",
+                        "title": "Material",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Material"
+                                    ]
+                                }
+                            }
                         }
+                    },
+                    "requiredQuantity": {
+                        "$ref": "#/definitions/QuantitativeValue"
                     }
                 }
             }
         },
         "requiredfor": {
             "type": "array",
-            "title": "Processes Requiring this Material",
+            "title": "Produced Materials",
             "uniqueItems": true,
             "items": {
                 "type": "string",
-                "title": "Process Requiring this Material",
+                "title": "Produced Material",
                 "cordra": {
                     "type": {
                         "handleReference": {
                             "types": [
-                                "MaterialProcess"
+                                "Material"
                             ]
                         }
                     }
                 }
             }
         },
-        "physical_state": {
-          "type": "string",
-          "title": "Physical State",
-          "enum": [
-            "Liquid",
-            "Suspension",
-            "Solid",
-            "Powder",
-            "Gas"
-          ]
-        },
-        "phases": {
+        "tool": {
             "type": "array",
-            "title": "Phases in this Material",
+            "title": "Tools used to perform the process",
             "uniqueItems": true,
             "items": {
                 "type": "string",
-                "title": "Phase Name"
+                "title": "Tools used to perform the process",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "DefinedTerm",
+                                "Instrument",
+                                "SoftwareApplication",
+                                "SoftwareSourceCode"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "parameterControlled": {
+            "type": "array",
+            "title": "Parameters Controlled",
+            "uniqueItems": true,
+            "items": {
+                "title": "Parameter Controlled",
+                "$ref": "#/definitions/QuantitativeValue"
+            }
+        },
+        "measurementTechnique": {
+            "$ref": "#/definitions/measurementTechnique"
+        },
+        "tabularDataColumns":{
+            "type": "array",
+            "title": "Column Names and Units",
+            "items": {
+                "title": "Column Name and Units",
+                "$ref": "#/definitions/DescriptiveValue"
             }
         }
     }

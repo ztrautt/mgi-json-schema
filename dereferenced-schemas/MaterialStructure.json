@@ -1,14 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
-    "title": "Material",
-    "description": "This form is for describing any measurable substance (e.g., sample, specimen, material, chemical, etc.), or a specific sup-sample (e.g., location on a larger artifact, sub-portion of a larger artifact, item within a collection of specimens, etc.).",
+    "title": "MaterialProcess",
+    "description": "This schema describes an observation of a material's structure.",
     "required": [
         "@id",
         "@context",
         "@type",
-        "phases",
-        "physical_state"
+        "requires"
     ],
     "definitions": {
         "QuantitativeValue": {
@@ -111,8 +110,7 @@
         "@type": {
             "type": "array",
             "default": [
-                "HowTo",
-                "mat:ProcessHistory"
+                "mat:Structure"
             ]
         },
         "@id": {
@@ -230,55 +228,78 @@
             "default": ""
         },
         "requires": {
-            "type": "string",
-                "title": "Process",
+            "type": "object",
+            "title": "Required Material for Measurement",
+            "properties": {
+                "type": "string",
+                "title": "Material",
                 "cordra": {
                     "type": {
                         "handleReference": {
                             "types": [
-                                "Process"
+                                "Material"
                             ]
+                        }
+                    }
+                },
+                "requiredQuantity": {
+                    "$ref": "#/definitions/QuantitativeValue"
+                }
+            }
+        },
+        "size": {
+            "type": "array",
+            "title": "Structure Size",
+            "items": {
+                "title": "Size in This Dimension",
+                "type": "object",
+                "properties":{
+                    "total_size": {
+                      "type": "number",
+                      "title": "Total Size in This Dimension"
+                    },
+                    "total_pixels": {
+                      "type": "number",
+                      "title": "Number of Pixels in This Dimension"
+                    },
+                    "unitText": {
+                        "title": "Unit Text",
+                        "type": "string"
+                    },
+                    "unitCode": {
+                        "title": "Unit Code",
+                        "type": "string",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "UnitOfMeasurement"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
             }
         },
-        "requiredfor": {
+        "parameterControlled": {
             "type": "array",
-            "title": "Processes Requiring this Material",
+            "title": "Parameters Controlled",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Process Requiring this Material",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "MaterialProcess"
-                            ]
-                        }
-                    }
-                }
+                "title": "Parameter Controlled",
+                "$ref": "#/definitions/QuantitativeValue"
             }
         },
-        "physical_state": {
-          "type": "string",
-          "title": "Physical State",
-          "enum": [
-            "Liquid",
-            "Suspension",
-            "Solid",
-            "Powder",
-            "Gas"
-          ]
+        "measurementTechnique": {
+            "$ref": "#/definitions/measurementTechnique"
         },
-        "phases": {
+        "tabularDataColumns":{
             "type": "array",
-            "title": "Phases in this Material",
-            "uniqueItems": true,
+            "title": "Column Names and Units",
             "items": {
-                "type": "string",
-                "title": "Phase Name"
+                "title": "Column Name and Units",
+                "$ref": "#/definitions/DescriptiveValue"
             }
         }
     }
