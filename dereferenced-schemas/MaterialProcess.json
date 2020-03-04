@@ -75,23 +75,22 @@
             }
         },
         "measurementTechnique": {
-            "type": "array",
+            "type": "object",
             "title": "Synthesis/Measurement Techniques",
-            "uniqueItems": true,
-            "items": [
-                {
+            "properties": {
+                "Synthesis": {
                     "type": "string",
                     "title": "Synthesis/Measurement Technique Name",
                 },
-                {
+                "Category": {
                     "type": "string",
                     "title": "Technique Category"
                 },
-                {
+                "Subcategory": {
                     "type": "string",
                     "title": "Technique Subcategory"
                 }
-            ]
+            }
         }
     },
     "properties": {

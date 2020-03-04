@@ -254,6 +254,10 @@
                 "title": "Size in This Dimension",
                 "type": "object",
                 "properties":{
+                    "dimension": {
+                      "type": "string",
+                      "title": "Dimension Description"
+                    },
                     "total_size": {
                       "type": "number",
                       "title": "Total Size in This Dimension"

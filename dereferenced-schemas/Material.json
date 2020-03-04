@@ -82,7 +82,7 @@
             "items": [
                 {
                     "type": "string",
-                    "title": "Synthesis/Measurement Technique Name",
+                    "title": "Synthesis/Measurement Technique Name"
                 },
                 {
                     "type": "string",
@@ -231,14 +231,13 @@
         },
         "requires": {
             "type": "string",
-                "title": "Process",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Process"
-                            ]
-                        }
+            "title": "Process",
+            "cordra": {
+                "type": {
+                    "handleReference": {
+                        "types": [
+                            "Process"
+                        ]
                     }
                 }
             }
