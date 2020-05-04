@@ -4,7 +4,8 @@
     "title": "DataCatalog",
     "definitions": {"DataCatalog": {
         "type": "object",
-        "properties": {"dataset": {
+        "properties": {
+          "dataset": {
             "type": "array",
             "title": "Datasets",
             "uniqueItems": true,
@@ -12,10 +13,12 @@
                 "type": "string",
                 "title": "Dataset",
                 "cordra": {"type": {"handleReference": {"types": [
-                    "File",
-                    "TabularDataPackage",
+                    "MaterialCharacteristicMeasured",
+                    "MaterialCharacteristicDerived",
+                    "MaterialProcess",
                     "MaterialProperty",
-                    "Dataset"
+                    "Dataset",
+                    "DataCatalog"
                 ]}}}
             }
         }}
