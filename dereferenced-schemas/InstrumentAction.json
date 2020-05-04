@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
-    "title": "File",
-    "description": "This schema is for depositing and describing a file in Cordra.",
+    "title": "InstrumentAction",
+    "description": "This schema is for describing an Instrument Action Entry in Cordra.",
     "required": [
         "@id",
         "@context",
@@ -23,33 +23,6 @@
                             "types": [
                                 "Material"
                             ]
-                        }
-                    }
-                }
-            }
-        },
-        "DataDownload": {
-            "type": "object",
-            "title": "Distribution",
-            "properties": {
-                "@type": {
-                    "type": "string",
-                    "default": "DataDownload"
-                },
-                "contentUrl": {
-                    "type": "string",
-                    "title": "Content URL"
-                },
-                "encodingFormat": {
-                    "type": "string",
-                    "title": "Data Type",
-                    "cordra": {
-                        "type": {
-                            "handleReference": {
-                                "types": [
-                                    "DataFormat"
-                                ]
-                            }
                         }
                     }
                 }
@@ -288,70 +261,9 @@
                 }
             }
         },
-        "includedInDataCatalog": {
-            "type": "array",
-            "title": "Included In Data Catalogs",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Included In Data Catalog",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "DataCatalog"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "isPartOf": {
-            "type": "array",
-            "title": "Is Part Of",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Collection",
-                                "Dataset",
-                                "File",
-                                "MaterialProperty",
-                                "TabularDataPackage"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
         "hasPart": {
             "type": "array",
             "title": "Supporting Dataset Parts",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Dataset",
-                                "File",
-                                "MaterialProperty",
-                                "TabularDataPackage"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "isBasedOn": {
-            "type": "array",
-            "title": "Dataset is derived from",
             "uniqueItems": true,
             "items": {
                 "type": "string",
@@ -386,7 +298,8 @@
             "type": "array",
             "default": [
                 "Dataset",
-                "mat:File"
+                "Action",
+                "mat:InstrumentActivity"
             ]
         },
         "@id": {
@@ -493,10 +406,7 @@
                             "types": [
                                 "DefinedTerm",
                                 "Project",
-                                "Collection",
-                                "ProcessHistory",
-                                "ProcessProtocol",
-                                "Material"
+                                "Collection"
                             ]
                         }
                     }
@@ -511,52 +421,6 @@
             "items": {
                 "type": "string",
                 "title": "Keyword"
-            }
-        },
-        "citation": {
-            "type": "array",
-            "title": "Citations",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Citation",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Citation",
-                                "User",
-                                "Person",
-                                "Organization",
-                                "Comment",
-                                "Dataset",
-                                "File",
-                                "MaterialProperty",
-                                "TabularDataPackage"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "funder": {
-            "type": "array",
-            "title": "Funders",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Funder",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
-                        }
-                    }
-                }
             }
         },
         "accountablePerson": {
@@ -578,190 +442,105 @@
                 }
             }
         },
-        "author": {
+        "actionStatus": {
             "type": "array",
-            "title": "Authors",
+            "title": "Action Status",
             "uniqueItems": true,
             "items": {
                 "type": "string",
-                "title": "Author",
+                "title": "Defined Term",
                 "cordra": {
                     "type": {
                         "handleReference": {
                             "types": [
-                                "User",
-                                "Person",
-                                "Organization"
+                                "DefinedTerm"
                             ]
                         }
                     }
                 }
             }
         },
-        "editor": {
-            "type": "array",
-            "title": "Editors",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Editor",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "creator": {
-            "type": "array",
-            "title": "Creators",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Creator",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "contributor": {
-            "type": "array",
-            "title": "Contributors",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Contributor",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "provider": {
-            "type": "array",
-            "title": "Providers",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Provider",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "publisher": {
-            "type": "array",
-            "title": "Publishers",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Publisher",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "copyrightHolder": {
-            "type": "array",
-            "title": "Copyright Holders",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Copyright Holder",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "license": {
-            "type": "string",
-            "title": "License"
-        },
-        "thumbnailUrl": {
-            "type": "array",
-            "title": "Thumbnail URLs",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Thumbnail URL"
-            }
-        },
-        "dateCreated": {
-            "title": "Date Created",
-            "type": "string"
-        },
-        "dateModified": {
-            "title": "Date Modified",
-            "type": "string"
-        },
-        "datePublished": {
-            "title": "Date Published",
-            "type": "string"
-        },
-        "comment": {
-            "type": "array",
-            "title": "Comments",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Comment",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Comment"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "measurementTechnique": {
+        "object": {
+            "title": "Object instrument",
+            "description": "The instrument upon which the action is carried out",
             "$ref": "#/definitions/measurementTechnique"
+        },
+        "instrument": {
+            "title": "Helping instrument",
+            "description": "The instrument or tool that helped the agent perform the action",
+            "$ref": "#/definitions/measurementTechnique"
+        },
+        "agent": {
+            "type": "array",
+            "title": "Agents",
+            "description": "The direct performer or driver of the action (animate or inanimate).",
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "title": "Agent",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "User",
+                                "Person",
+                                "Organization"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "participant": {
+            "type": "array",
+            "title": "Participants",
+            "description": "Other co-agents that participated in the action indirectly.",
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "title": "Participant",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "User",
+                                "Person",
+                                "Organization"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "startTime": {
+            "title": "Start Time",
+            "type": "string"
+        },
+        "endTime": {
+            "title": "End Time",
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "title": "Location",
+            "description": "Location where action is being performed if different from instrument location. (e.g., offsite repair)",
+            "format": "textarea"
+        },
+        "material": {
+            "title": "Material",
+            "$ref": "#/definitions/materialLinked"
+        },
+        "materialExtent": {
+            "title": "Material Quantity",
+            "$ref": "#/definitions/QuantitativeValue"
+        },
+        "materialReference": {
+            "title": "Reference Material",
+            "$ref": "#/definitions/materialLinked"
+        },
+        "materialReferenceExtent": {
+            "title": "Reference Material Quantity",
+            "$ref": "#/definitions/QuantitativeValue"
         },
         "variableMeasured": {
             "type": "array",
@@ -781,40 +560,34 @@
                 "$ref": "#/definitions/variableMeasured"
             }
         },
-        "material": {
-            "title": "Material",
-            "$ref": "#/definitions/materialLinked"
-        },
-        "materialExtent": {
-            "title": "Material Quantity",
-            "$ref": "#/definitions/QuantitativeValue"
-        },
-        "materialReference": {
-            "title": "Reference Material",
-            "$ref": "#/definitions/materialLinked"
-        },
-        "materialReferenceExtent": {
-            "title": "Reference Material Quantity",
-            "$ref": "#/definitions/QuantitativeValue"
-        },
-        "includedInDataCatalog": {
-            "$ref": "#/definitions/includedInDataCatalog"
-        },
-        "uploadDate": {
-            "title": "Upload Date",
-            "type": "string"
-        },
-        "distribution": {
-            "$ref": "#/definitions/DataDownload"
-        },
         "hasPart": {
             "$ref": "#/definitions/hasPart"
         },
-        "isPartOf": {
-            "$ref": "#/definitions/isPartOf"
+        "error": {
+            "title": "Error Records",
+            "$ref": "#/definitions/hasPart"
         },
-        "isBasedOn": {
-            "$ref": "#/definitions/isBasedOn"
+        "result": {
+            "title": "Result Records",
+            "$ref": "#/definitions/hasPart"
+        },
+        "comment": {
+            "type": "array",
+            "title": "Comments",
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "title": "Comment",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "Comment"
+                            ]
+                        }
+                    }
+                }
+            }
         }
     }
 }
