@@ -1,4 +1,4 @@
-var schema = require('/cordra/schemas/Group.schema.json');
+var schema = require('/cordra/schemas/Collection.schema.json');
 exports.beforeSchemaValidation = beforeSchemaValidation;
 
 function beforeSchemaValidation(obj, context) {
