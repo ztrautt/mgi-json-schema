@@ -69,6 +69,10 @@
                     "value": {
                         "title": "Identifier Value",
                         "type": "string"
+                    },
+                    "url": {
+                        "title": "Identifier URL",
+                        "type": "string"
                     }
                 }
             }
@@ -118,11 +122,11 @@
         "about": {
             "type": "array",
             "title": "About",
-            "description": "This is for linking controlled vocabulary terms and parent projects.",
+            "description": "The subject matter of the this thing (e.g., DefinedTerm, Project, Material, Experiment, Study, etc.)",
             "uniqueItems": true,
             "items": {
                 "type": "string",
-                "title": "Subject/Project",
+                "title": "Referenced Item",
                 "cordra": {
                     "type": {
                         "handleReference": {
@@ -132,7 +136,9 @@
                                 "Collection",
                                 "ProcessHistory",
                                 "ProcessProtocol",
-                                "Material"
+                                "Material",
+                                "Experiment",
+                                "Study"
                             ]
                         }
                     }
@@ -368,14 +374,17 @@
         },
         "dateCreated": {
             "title": "Date Created",
+            "description": "A date value in ISO 8601 date format, e.g.: YYYY-MM-DD, YYYY-MM-DDThh:mm:ssTZD",
             "type": "string"
         },
         "dateModified": {
             "title": "Date Modified",
+            "description": "A date value in ISO 8601 date format, e.g.: YYYY-MM-DD, YYYY-MM-DDThh:mm:ssTZD",
             "type": "string"
         },
         "datePublished": {
             "title": "Date Published",
+            "description": "A date value in ISO 8601 date format, e.g.: YYYY-MM-DD, YYYY-MM-DDThh:mm:ssTZD",
             "type": "string"
         },
         "comment": {
@@ -390,6 +399,24 @@
                         "handleReference": {
                             "types": [
                                 "Comment"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "spatial": {
+            "type": "array",
+            "title": "Specific Spatial Location",
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "title": "Place",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "Place"
                             ]
                         }
                     }
