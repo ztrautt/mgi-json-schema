@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
-    "title": "File",
-    "description": "This schema is for depositing and describing a file in Cordra.",
+    "title": "MaterialProperty",
+    "description": "This schema is for depositing and describing a MaterialProperty in Cordra.",
     "required": [
         "@id",
         "@context",
@@ -23,33 +23,6 @@
                             "types": [
                                 "Material"
                             ]
-                        }
-                    }
-                }
-            }
-        },
-        "DataDownload": {
-            "type": "object",
-            "title": "Distribution",
-            "properties": {
-                "@type": {
-                    "type": "string",
-                    "default": "DataDownload"
-                },
-                "contentUrl": {
-                    "type": "string",
-                    "title": "Content URL"
-                },
-                "encodingFormat": {
-                    "type": "string",
-                    "title": "Data Type",
-                    "cordra": {
-                        "type": {
-                            "handleReference": {
-                                "types": [
-                                    "DataFormat"
-                                ]
-                            }
                         }
                     }
                 }
@@ -386,7 +359,7 @@
             "type": "array",
             "default": [
                 "Dataset",
-                "mat:File"
+                "mat:MaterialProperty"
             ]
         },
         "@id": {
@@ -787,17 +760,31 @@
                 }
             }
         },
+        "includedInDataCatalog": {
+            "$ref": "#/definitions/includedInDataCatalog"
+        },
+        "material": {
+            "title": "Material",
+            "$ref": "#/definitions/materialLinked"
+        },
+        "materialExtent": {
+            "title": "Material Quantity",
+            "$ref": "#/definitions/QuantitativeValue"
+        },
+        "materialReference": {
+            "title": "Reference Material",
+            "$ref": "#/definitions/materialLinked"
+        },
+        "materialReferenceExtent": {
+            "title": "Reference Material Quantity",
+            "$ref": "#/definitions/QuantitativeValue"
+        },
         "measurementTechnique": {
             "$ref": "#/definitions/measurementTechnique"
         },
         "variableMeasured": {
-            "type": "array",
-            "title": "Variables Measured",
-            "uniqueItems": true,
-            "items": {
-                "title": "Variable Measured",
-                "$ref": "#/definitions/variableMeasured"
-            }
+            "title": "Material Property",
+            "$ref": "#/definitions/variableMeasured"
         },
         "parameterControlled": {
             "type": "array",
@@ -816,33 +803,6 @@
                 "title": "Condition Observed",
                 "$ref": "#/definitions/variableMeasured"
             }
-        },
-        "material": {
-            "title": "Material",
-            "$ref": "#/definitions/materialLinked"
-        },
-        "materialExtent": {
-            "title": "Material Quantity",
-            "$ref": "#/definitions/QuantitativeValue"
-        },
-        "materialReference": {
-            "title": "Reference Material",
-            "$ref": "#/definitions/materialLinked"
-        },
-        "materialReferenceExtent": {
-            "title": "Reference Material Quantity",
-            "$ref": "#/definitions/QuantitativeValue"
-        },
-        "includedInDataCatalog": {
-            "$ref": "#/definitions/includedInDataCatalog"
-        },
-        "uploadDate": {
-            "title": "Upload Date",
-            "description": "A date value in ISO 8601 date format, e.g.: YYYY-MM-DD, YYYY-MM-DDThh:mm:ssTZD",
-            "type": "string"
-        },
-        "distribution": {
-            "$ref": "#/definitions/DataDownload"
         },
         "hasPart": {
             "$ref": "#/definitions/hasPart"

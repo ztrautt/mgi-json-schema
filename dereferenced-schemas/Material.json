@@ -1,60 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
-    "title": "File",
-    "description": "This schema is for depositing and describing a file in Cordra.",
+    "title": "Material",
+    "description": "This form is for describing any measurable substance (e.g., sample, specimen, material, chemical, etc.), or a specific sup-sample (e.g., location on a larger artifact, sub-portion of a larger artifact, item within a collection of specimens, etc.).",
     "required": [
         "@id",
         "@context",
         "@type"
     ],
     "definitions": {
-        "materialLinked": {
-            "type": "array",
-            "title": "Materials",
-            "description": "This field is for linking to any substance (e.g., sample, specimen, material, chemical, etc.), or a specific sup-sample (e.g., location on a larger artifact, sub-portion of a larger artifact, item within a collection of specimens, etc.).",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Material",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Material"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "DataDownload": {
-            "type": "object",
-            "title": "Distribution",
-            "properties": {
-                "@type": {
-                    "type": "string",
-                    "default": "DataDownload"
-                },
-                "contentUrl": {
-                    "type": "string",
-                    "title": "Content URL"
-                },
-                "encodingFormat": {
-                    "type": "string",
-                    "title": "Data Type",
-                    "cordra": {
-                        "type": {
-                            "handleReference": {
-                                "types": [
-                                    "DataFormat"
-                                ]
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "QuantitativeValue": {
             "type": "object",
             "properties": {
@@ -84,27 +38,6 @@
                                     "UnitOfMeasurement"
                                 ]
                             }
-                        }
-                    }
-                }
-            }
-        },
-        "measurementTechnique": {
-            "type": "array",
-            "title": "Synthesis/Measurement/Computational Technique or Instrument/Software Used",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "DefinedTerm",
-                                "Instrument",
-                                "SoftwareApplication",
-                                "SoftwareSourceCode"
-                            ]
                         }
                     }
                 }
@@ -288,27 +221,10 @@
                 }
             }
         },
-        "includedInDataCatalog": {
+        "subjectOf": {
             "type": "array",
-            "title": "Included In Data Catalogs",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Included In Data Catalog",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "DataCatalog"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "isPartOf": {
-            "type": "array",
-            "title": "Is Part Of",
+            "title": "Subject Of",
+            "description": "A CreativeWork about this Thing (e.g., Linked Materials, Datasets, etc.)",
             "uniqueItems": true,
             "items": {
                 "type": "string",
@@ -317,53 +233,24 @@
                     "type": {
                         "handleReference": {
                             "types": [
+                                "Citation",
                                 "Collection",
+                                "Comment",
+                                "DataCatalog",
+                                "DataFormat",
                                 "Dataset",
+                                "DefinedTermSet",
                                 "File",
+                                "Instrument",
+                                "Material",
                                 "MaterialProperty",
-                                "TabularDataPackage"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "hasPart": {
-            "type": "array",
-            "title": "Supporting Dataset Parts",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Dataset",
-                                "File",
-                                "MaterialProperty",
-                                "TabularDataPackage"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "isBasedOn": {
-            "type": "array",
-            "title": "Dataset is derived from",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Dataset",
-                                "File",
-                                "MaterialProperty",
-                                "TabularDataPackage"
+                                "ProcessHistory",
+                                "ProcessProtocol",
+                                "SoftwareApplication",
+                                "SoftwareSourceCode",
+                                "TabularDataPackage",
+                                "Experiment",
+                                "Study"
                             ]
                         }
                     }
@@ -378,15 +265,16 @@
                 "http://schema.org/",
                 {
                     "mat": "https://pages.nist.gov/material-schema/",
-                    "parameterControlled": "mat:parameterControlled"
+                    "parameterControlled": "mat:parameterControlled",
+                    "variableMeasured": "mat:variableMeasured"
                 }
             ]
         },
         "@type": {
             "type": "array",
             "default": [
-                "Dataset",
-                "mat:File"
+                "CreativeWork",
+                "mat:Material"
             ]
         },
         "@id": {
@@ -787,8 +675,81 @@
                 }
             }
         },
-        "measurementTechnique": {
-            "$ref": "#/definitions/measurementTechnique"
+        "exampleOfWork": {
+            "type": "array",
+            "title": "Processing History/Protocol",
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "title": "Processing History/Protocol",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "ProcessHistory",
+                                "ProcessProtocol"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "isSupplyFor": {
+            "type": "array",
+            "title": "This Material is a Supply/Starting Material for this Process",
+            "uniqueItems": true,
+            "items": {
+                "title": "Process",
+                "type": "string",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "ProcessHistory",
+                                "ProcessProtocol"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "subjectOf": {
+            "$ref": "#/definitions/subjectOf"
+        },
+        "isPartOf": {
+            "title": "Has Parent Materials and Collections",
+            "type": "array",
+            "items": {
+                "title": "Has Parent Materialor Collection",
+                "type": "string",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "Collection",
+                                "Material"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "hasPart": {
+            "title": "Has Child Materials",
+            "type": "array",
+            "items": {
+                "title": "Has Child Material",
+                "type": "string",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "Material"
+                            ]
+                        }
+                    }
+                }
+            }
         },
         "variableMeasured": {
             "type": "array",
@@ -817,41 +778,69 @@
                 "$ref": "#/definitions/variableMeasured"
             }
         },
-        "material": {
-            "title": "Material",
-            "$ref": "#/definitions/materialLinked"
-        },
         "materialExtent": {
-            "title": "Material Quantity",
             "$ref": "#/definitions/QuantitativeValue"
         },
-        "materialReference": {
-            "title": "Reference Material",
-            "$ref": "#/definitions/materialLinked"
+        "isBasedOn": {
+            "type": "array",
+            "title": "Material is based on",
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "title": "Material",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "Material"
+                            ]
+                        }
+                    }
+                }
+            }
         },
-        "materialReferenceExtent": {
-            "title": "Reference Material Quantity",
-            "$ref": "#/definitions/QuantitativeValue"
+        "manufacturer": {
+            "type": "array",
+            "title": "Manufacturers",
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "title": "Manufacturer",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": [
+                                "User",
+                                "Person",
+                                "Organization"
+                            ]
+                        }
+                    }
+                }
+            }
         },
-        "includedInDataCatalog": {
-            "$ref": "#/definitions/includedInDataCatalog"
+        "brand": {
+            "type": "string"
         },
-        "uploadDate": {
-            "title": "Upload Date",
+        "model": {
+            "type": "string"
+        },
+        "productID": {
+            "type": "string"
+        },
+        "productionDate": {
+            "title": "Production Date",
             "description": "A date value in ISO 8601 date format, e.g.: YYYY-MM-DD, YYYY-MM-DDThh:mm:ssTZD",
             "type": "string"
         },
-        "distribution": {
-            "$ref": "#/definitions/DataDownload"
+        "purchaseDate": {
+            "title": "Purchase Date",
+            "description": "A date value in ISO 8601 date format, e.g.: YYYY-MM-DD, YYYY-MM-DDThh:mm:ssTZD",
+            "type": "string"
         },
-        "hasPart": {
-            "$ref": "#/definitions/hasPart"
-        },
-        "isPartOf": {
-            "$ref": "#/definitions/isPartOf"
-        },
-        "isBasedOn": {
-            "$ref": "#/definitions/isBasedOn"
+        "serialNumber": {
+            "title": "Serial Number",
+            "type": "string"
         }
     }
 }
