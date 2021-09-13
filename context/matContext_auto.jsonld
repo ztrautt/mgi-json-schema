@@ -1,0 +1,123 @@
+{
+  "@context": {
+    "mat": "https://pages.nist.gov/material-schema/",
+    "mathub": "https://api.materialhub.org/objects/",
+    "schema": "http://schema.org/",
+    "xsd": "https://www.w3.org/2001/XMLSchema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "broader": "skos:broader",
+    "narrower": "skos:narrower",
+    "related": "skos:related",
+    "exactMatch": "skos:exactMatch",
+    "closeMatch": "skos:closeMatch",
+    "Action": {
+      "@id": "schema:Action"
+    },
+    "Collection": {
+      "@id": "schema:Collection"
+    },
+    "identifier": {
+      "@id": "schema:identifier"
+    },
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "alternateName": {
+      "@id": "schema:alternateName",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "schema:URL"
+    },
+    "image": {
+      "@id": "schema:image",
+      "@type": "xsd:string"
+    },
+    "subjectOf": {
+      "@id": "schema:subjectOf",
+      "@type": "xsd:string"
+    },
+    "about": {
+      "@id": "schema:about",
+      "@type": "xsd:string"
+    },
+    "keywords": {
+      "@id": "schema:keywords",
+      "@type": "xsd:string"
+    },
+    "citation": {
+      "@id": "schema:citation",
+      "@type": "xsd:string"
+    },
+    "funder": {
+      "@id": "schema:funder",
+      "@type": "@id"
+    },
+    "accountablePerson": {
+      "@id": "schema:accountablePerson",
+      "@type": "@id"
+    },
+    "author": {
+      "@id": "schema:author",
+      "@type": "@id"
+    },
+    "editor": {
+      "@id": "schema:editor",
+      "@type": "@id"
+    },
+    "creator": {
+      "@id": "schema:creator",
+      "@type": "@id"
+    },
+    "contributor": {
+      "@id": "schema:contributor",
+      "@type": "@id"
+    },
+    "provider": {
+      "@id": "schema:provider",
+      "@type": "@id"
+    },
+    "publisher": {
+      "@id": "schema:publisher",
+      "@type": "@id"
+    },
+    "copyrightHolder": {
+      "@id": "schema:copyrightHolder",
+      "@type": "@id"
+    },
+    "license": {
+      "@id": "schema:license",
+      "@type": "xsd:string"
+    },
+    "thumbnailUrl": {
+      "@id": "schema:thumbnailUrl",
+      "@type": "schema:URL"
+    },
+    "dateCreated": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:date"
+    },
+    "dateModified": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:date"
+    },
+    "datePublished": {
+      "@id": "schema:datePublished",
+      "@type": "xsd:date"
+    },
+    "comment": {
+      "@id": "schema:comment",
+      "@type": "@id"
+    },
+    "spatial": {
+      "@id": "schema:spatial",
+      "@type": "@id"
+    }
+  }
+}

@@ -1,0 +1,732 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "mat": "https://pages.nist.gov/material-schema/"
+  },
+  "@graph": [
+    {
+      "@id": "schema:Collection",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Collection",
+      "rdfs:subClassOf": [
+        "schema:Thing",
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:Comment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Comment",
+      "rdfs:subClassOf": [
+        "schema:Thing",
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:DataCatalog",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DataCatalog",
+      "rdfs:subClassOf": [
+        "schema:Thing",
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "mat:DataFormat",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DataFormat",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:Dataset",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Dataset",
+      "rdfs:subClassOf": [
+        "schema:Thing",
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:DefinedTerm",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DefinedTerm",
+      "rdfs:subClassOf": [
+        "schema:Thing"
+      ]
+    },
+    {
+      "@id": "schema:DefinedTermSet",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DefinedTermSet",
+      "rdfs:subClassOf": [
+        "schema:Thing",
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "mat:DutyAction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "DutyAction",
+      "rdfs:subClassOf": [
+        "schema:Thing"
+      ]
+    },
+    {
+      "@id": "mat:Experiment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Experiment",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "mat:File",
+      "@type": "rdfs:Class",
+      "rdfs:label": "File",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "mat:Instrument",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Instrument",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork",
+        "schema:Product",
+        "schema:Action"
+      ]
+    },
+    {
+      "@id": "mat:InstrumentAction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "InstrumentAction",
+      "rdfs:subClassOf": [
+        "schema:Thing"
+      ]
+    },
+    {
+      "@id": "mat:Material",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Material",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork",
+        "schema:Product"
+      ]
+    },
+    {
+      "@id": "mat:MaterialProperty",
+      "@type": "rdfs:Class",
+      "rdfs:label": "MaterialProperty",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:Organization",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Organization",
+      "rdfs:subClassOf": [
+        "schema:Thing"
+      ]
+    },
+    {
+      "@id": "schema:Person",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Person",
+      "rdfs:subClassOf": [
+        "mat:CordraUser",
+        "schema:Thing"
+      ]
+    },
+    {
+      "@id": "schema:Place",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Place",
+      "rdfs:subClassOf": [
+        "schema:Thing"
+      ]
+    },
+    {
+      "@id": "schema:Project",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Project",
+      "rdfs:subClassOf": [
+        "schema:Thing"
+      ]
+    },
+    {
+      "@id": "schema:SoftwareApplication",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SoftwareApplication",
+      "rdfs:subClassOf": [
+        "schema:Thing",
+        "schema:CreativeWork",
+        "schema:Action"
+      ]
+    },
+    {
+      "@id": "schema:SoftwareSourceCode",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SoftwareSourceCode",
+      "rdfs:subClassOf": [
+        "schema:Thing",
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "mat:Study",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Study",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork"
+      ]
+    },
+    {
+      "@id": "mat:TabularData",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TabularData",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork",
+        "mat:File"
+      ]
+    },
+    {
+      "@id": "mat:TabularDataPackage",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TabularDataPackage",
+      "rdfs:subClassOf": [
+        "schema:CreativeWork",
+        "mat:File"
+      ]
+    },
+    {
+      "@id": "mat:UnitOfMeasurement",
+      "@type": "rdfs:Class",
+      "rdfs:label": "UnitOfMeasurement",
+      "rdfs:subClassOf": [
+        "schema:Thing"
+      ]
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdfs:Class",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": [
+        "Thing"
+      ]
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdfs:Class",
+      "rdfs:label": "name",
+      "schema:domainIncludes": [
+        "Thing"
+      ]
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdfs:Class",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": [
+        "Thing"
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdfs:Class",
+      "rdfs:label": "description",
+      "schema:domainIncludes": [
+        "Thing"
+      ]
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdfs:Class",
+      "rdfs:label": "url",
+      "schema:domainIncludes": [
+        "Thing"
+      ]
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdfs:Class",
+      "rdfs:label": "image",
+      "schema:domainIncludes": [
+        "Thing"
+      ]
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdfs:Class",
+      "rdfs:label": "subjectOf",
+      "schema:domainIncludes": [
+        "Thing"
+      ]
+    },
+    {
+      "@id": "schema:about",
+      "@type": "rdfs:Class",
+      "rdfs:label": "about",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:keywords",
+      "@type": "rdfs:Class",
+      "rdfs:label": "keywords",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:citation",
+      "@type": "rdfs:Class",
+      "rdfs:label": "citation",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:funder",
+      "@type": "rdfs:Class",
+      "rdfs:label": "funder",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Organization",
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:accountablePerson",
+      "@type": "rdfs:Class",
+      "rdfs:label": "accountablePerson",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:author",
+      "@type": "rdfs:Class",
+      "rdfs:label": "author",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Organization",
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:editor",
+      "@type": "rdfs:Class",
+      "rdfs:label": "editor",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:creator",
+      "@type": "rdfs:Class",
+      "rdfs:label": "creator",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Organization",
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:contributor",
+      "@type": "rdfs:Class",
+      "rdfs:label": "contributor",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Organization",
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:provider",
+      "@type": "rdfs:Class",
+      "rdfs:label": "provider",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Organization",
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:publisher",
+      "@type": "rdfs:Class",
+      "rdfs:label": "publisher",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Organization",
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:copyrightHolder",
+      "@type": "rdfs:Class",
+      "rdfs:label": "copyrightHolder",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Organization",
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:license",
+      "@type": "rdfs:Class",
+      "rdfs:label": "license",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:thumbnailUrl",
+      "@type": "rdfs:Class",
+      "rdfs:label": "thumbnailUrl",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:dateCreated",
+      "@type": "rdfs:Class",
+      "rdfs:label": "dateCreated",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:dateModified",
+      "@type": "rdfs:Class",
+      "rdfs:label": "dateModified",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:datePublished",
+      "@type": "rdfs:Class",
+      "rdfs:label": "datePublished",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ]
+    },
+    {
+      "@id": "schema:comment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "comment",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Comment"
+      ]
+    },
+    {
+      "@id": "schema:spatial",
+      "@type": "rdfs:Class",
+      "rdfs:label": "spatial",
+      "schema:domainIncludes": [
+        "CreativeWork"
+      ],
+      "schema:rangeIncludes": [
+        "Place"
+      ]
+    },
+    {
+      "@id": "schema:manufacturer",
+      "@type": "rdfs:Class",
+      "rdfs:label": "manufacturer",
+      "schema:domainIncludes": [
+        "Product"
+      ],
+      "schema:rangeIncludes": [
+        "Organization",
+        "Person",
+        "User"
+      ]
+    },
+    {
+      "@id": "schema:brand",
+      "@type": "rdfs:Class",
+      "rdfs:label": "brand",
+      "schema:domainIncludes": [
+        "Product"
+      ]
+    },
+    {
+      "@id": "schema:model",
+      "@type": "rdfs:Class",
+      "rdfs:label": "model",
+      "schema:domainIncludes": [
+        "Product"
+      ]
+    },
+    {
+      "@id": "schema:productID",
+      "@type": "rdfs:Class",
+      "rdfs:label": "productID",
+      "schema:domainIncludes": [
+        "Product"
+      ]
+    },
+    {
+      "@id": "schema:productionDate",
+      "@type": "rdfs:Class",
+      "rdfs:label": "productionDate",
+      "schema:domainIncludes": [
+        "Product"
+      ]
+    },
+    {
+      "@id": "schema:purchaseDate",
+      "@type": "rdfs:Class",
+      "rdfs:label": "purchaseDate",
+      "schema:domainIncludes": [
+        "Product"
+      ]
+    },
+    {
+      "@id": "schema:serialNumber",
+      "@type": "rdfs:Class",
+      "rdfs:label": "serialNumber",
+      "schema:domainIncludes": [
+        "Product"
+      ]
+    },
+    {
+      "@id": "schema:object",
+      "@type": "rdfs:Class",
+      "rdfs:label": "object",
+      "schema:domainIncludes": [
+        "Action"
+      ],
+      "schema:rangeIncludes": [
+        "Material",
+        "MaterialProperty",
+        "MaterialStructure",
+        "ProcessHistory",
+        "ProcessProtocol"
+      ]
+    },
+    {
+      "@id": "schema:result",
+      "@type": "rdfs:Class",
+      "rdfs:label": "result",
+      "schema:domainIncludes": [
+        "Action"
+      ],
+      "schema:rangeIncludes": [
+        "Material",
+        "MaterialProperty",
+        "MaterialStructure",
+        "ProcessHistory",
+        "ProcessProtocol"
+      ]
+    },
+    {
+      "@id": "schema:target",
+      "@type": "rdfs:Class",
+      "rdfs:label": "target",
+      "schema:domainIncludes": [
+        "Action"
+      ],
+      "schema:rangeIncludes": [
+        "Material",
+        "MaterialProperty",
+        "MaterialStructure",
+        "ProcessHistory",
+        "ProcessProtocol"
+      ]
+    },
+    {
+      "@id": "mat:username",
+      "@type": "rdfs:Property",
+      "rdfs:label": "username",
+      "schema:domainIncludes": [
+        "CordraUser"
+      ]
+    },
+    {
+      "@id": "mat:password",
+      "@type": "rdfs:Property",
+      "rdfs:label": "password",
+      "schema:domainIncludes": [
+        "CordraUser"
+      ]
+    },
+    {
+      "@id": "mat:requirePasswordChange",
+      "@type": "rdfs:Property",
+      "rdfs:label": "requirePasswordChange",
+      "schema:domainIncludes": [
+        "CordraUser"
+      ]
+    },
+    {
+      "@id": "mat:publicKey",
+      "@type": "rdfs:Property",
+      "rdfs:label": "publicKey",
+      "schema:domainIncludes": [
+        "CordraUser"
+      ]
+    },
+    {
+      "@id": "schema:measurementTechnique",
+      "@type": "rdfs:Class",
+      "rdfs:label": "measurementTechnique",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:variableMeasured",
+      "@type": "rdfs:Class",
+      "rdfs:label": "variableMeasured",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "mat:parameterControlled",
+      "@type": "rdfs:Property",
+      "rdfs:label": "parameterControlled",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "mat:conditionObserved",
+      "@type": "rdfs:Property",
+      "rdfs:label": "conditionObserved",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:material",
+      "@type": "rdfs:Class",
+      "rdfs:label": "material",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:materialExtent",
+      "@type": "rdfs:Class",
+      "rdfs:label": "materialExtent",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "mat:materialReference",
+      "@type": "rdfs:Property",
+      "rdfs:label": "materialReference",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "mat:materialReferenceExtent",
+      "@type": "rdfs:Property",
+      "rdfs:label": "materialReferenceExtent",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:includedInDataCatalog",
+      "@type": "rdfs:Class",
+      "rdfs:label": "includedInDataCatalog",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:uploadDate",
+      "@type": "rdfs:Class",
+      "rdfs:label": "uploadDate",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:distribution",
+      "@type": "rdfs:Class",
+      "rdfs:label": "distribution",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:hasPart",
+      "@type": "rdfs:Class",
+      "rdfs:label": "hasPart",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:isPartOf",
+      "@type": "rdfs:Class",
+      "rdfs:label": "isPartOf",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:isBasedOn",
+      "@type": "rdfs:Class",
+      "rdfs:label": "isBasedOn",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    },
+    {
+      "@id": "schema:exampleOfWork",
+      "@type": "rdfs:Class",
+      "rdfs:label": "exampleOfWork",
+      "schema:domainIncludes": [
+        "File"
+      ]
+    }
+  ]
+}
