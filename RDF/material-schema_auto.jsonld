@@ -98,8 +98,7 @@
       "rdfs:label": "Instrument",
       "rdfs:subClassOf": [
         "schema:CreativeWork",
-        "schema:Product",
-        "schema:Action"
+        "schema:Product"
       ]
     },
     {
@@ -166,8 +165,7 @@
       "rdfs:label": "SoftwareApplication",
       "rdfs:subClassOf": [
         "schema:Thing",
-        "schema:CreativeWork",
-        "schema:Action"
+        "schema:CreativeWork"
       ]
     },
     {
@@ -215,7 +213,7 @@
     },
     {
       "@id": "schema:identifier",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "identifier",
       "schema:domainIncludes": [
         "Thing"
@@ -223,7 +221,7 @@
     },
     {
       "@id": "schema:name",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "name",
       "schema:domainIncludes": [
         "Thing"
@@ -231,7 +229,7 @@
     },
     {
       "@id": "schema:alternateName",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "alternateName",
       "schema:domainIncludes": [
         "Thing"
@@ -239,7 +237,7 @@
     },
     {
       "@id": "schema:description",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "description",
       "schema:domainIncludes": [
         "Thing"
@@ -247,7 +245,7 @@
     },
     {
       "@id": "schema:url",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "url",
       "schema:domainIncludes": [
         "Thing"
@@ -255,7 +253,7 @@
     },
     {
       "@id": "schema:image",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "image",
       "schema:domainIncludes": [
         "Thing"
@@ -263,7 +261,7 @@
     },
     {
       "@id": "schema:subjectOf",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "subjectOf",
       "schema:domainIncludes": [
         "Thing"
@@ -271,7 +269,7 @@
     },
     {
       "@id": "schema:about",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "about",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -279,7 +277,7 @@
     },
     {
       "@id": "schema:keywords",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "keywords",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -287,7 +285,7 @@
     },
     {
       "@id": "schema:citation",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "citation",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -295,7 +293,7 @@
     },
     {
       "@id": "schema:funder",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "funder",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -308,7 +306,7 @@
     },
     {
       "@id": "schema:accountablePerson",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "accountablePerson",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -320,7 +318,7 @@
     },
     {
       "@id": "schema:author",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "author",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -333,7 +331,7 @@
     },
     {
       "@id": "schema:editor",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "editor",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -345,7 +343,7 @@
     },
     {
       "@id": "schema:creator",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "creator",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -358,7 +356,7 @@
     },
     {
       "@id": "schema:contributor",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "contributor",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -371,7 +369,7 @@
     },
     {
       "@id": "schema:provider",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -384,7 +382,7 @@
     },
     {
       "@id": "schema:publisher",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "publisher",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -397,7 +395,7 @@
     },
     {
       "@id": "schema:copyrightHolder",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "copyrightHolder",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -410,7 +408,7 @@
     },
     {
       "@id": "schema:license",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "license",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -418,7 +416,7 @@
     },
     {
       "@id": "schema:thumbnailUrl",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "thumbnailUrl",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -426,7 +424,7 @@
     },
     {
       "@id": "schema:dateCreated",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "dateCreated",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -434,7 +432,7 @@
     },
     {
       "@id": "schema:dateModified",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "dateModified",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -442,7 +440,7 @@
     },
     {
       "@id": "schema:datePublished",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "datePublished",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -450,7 +448,7 @@
     },
     {
       "@id": "schema:comment",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "comment",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -461,7 +459,7 @@
     },
     {
       "@id": "schema:spatial",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "spatial",
       "schema:domainIncludes": [
         "CreativeWork"
@@ -472,7 +470,7 @@
     },
     {
       "@id": "schema:manufacturer",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "manufacturer",
       "schema:domainIncludes": [
         "Product"
@@ -485,7 +483,7 @@
     },
     {
       "@id": "schema:brand",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         "Product"
@@ -493,7 +491,7 @@
     },
     {
       "@id": "schema:model",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "model",
       "schema:domainIncludes": [
         "Product"
@@ -501,7 +499,7 @@
     },
     {
       "@id": "schema:productID",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "productID",
       "schema:domainIncludes": [
         "Product"
@@ -509,7 +507,7 @@
     },
     {
       "@id": "schema:productionDate",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "productionDate",
       "schema:domainIncludes": [
         "Product"
@@ -517,7 +515,7 @@
     },
     {
       "@id": "schema:purchaseDate",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "purchaseDate",
       "schema:domainIncludes": [
         "Product"
@@ -525,55 +523,10 @@
     },
     {
       "@id": "schema:serialNumber",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "serialNumber",
       "schema:domainIncludes": [
         "Product"
-      ]
-    },
-    {
-      "@id": "schema:object",
-      "@type": "rdfs:Class",
-      "rdfs:label": "object",
-      "schema:domainIncludes": [
-        "Action"
-      ],
-      "schema:rangeIncludes": [
-        "Material",
-        "MaterialProperty",
-        "MaterialStructure",
-        "ProcessHistory",
-        "ProcessProtocol"
-      ]
-    },
-    {
-      "@id": "schema:result",
-      "@type": "rdfs:Class",
-      "rdfs:label": "result",
-      "schema:domainIncludes": [
-        "Action"
-      ],
-      "schema:rangeIncludes": [
-        "Material",
-        "MaterialProperty",
-        "MaterialStructure",
-        "ProcessHistory",
-        "ProcessProtocol"
-      ]
-    },
-    {
-      "@id": "schema:target",
-      "@type": "rdfs:Class",
-      "rdfs:label": "target",
-      "schema:domainIncludes": [
-        "Action"
-      ],
-      "schema:rangeIncludes": [
-        "Material",
-        "MaterialProperty",
-        "MaterialStructure",
-        "ProcessHistory",
-        "ProcessProtocol"
       ]
     },
     {
@@ -610,7 +563,7 @@
     },
     {
       "@id": "schema:measurementTechnique",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "measurementTechnique",
       "schema:domainIncludes": [
         "File"
@@ -618,7 +571,7 @@
     },
     {
       "@id": "schema:variableMeasured",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "variableMeasured",
       "schema:domainIncludes": [
         "File"
@@ -642,7 +595,7 @@
     },
     {
       "@id": "schema:material",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "material",
       "schema:domainIncludes": [
         "File"
@@ -650,7 +603,7 @@
     },
     {
       "@id": "schema:materialExtent",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "materialExtent",
       "schema:domainIncludes": [
         "File"
@@ -674,7 +627,7 @@
     },
     {
       "@id": "schema:includedInDataCatalog",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "includedInDataCatalog",
       "schema:domainIncludes": [
         "File"
@@ -682,7 +635,7 @@
     },
     {
       "@id": "schema:uploadDate",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "uploadDate",
       "schema:domainIncludes": [
         "File"
@@ -690,7 +643,7 @@
     },
     {
       "@id": "schema:distribution",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "distribution",
       "schema:domainIncludes": [
         "File"
@@ -698,7 +651,7 @@
     },
     {
       "@id": "schema:hasPart",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "hasPart",
       "schema:domainIncludes": [
         "File"
@@ -706,7 +659,7 @@
     },
     {
       "@id": "schema:isPartOf",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "isPartOf",
       "schema:domainIncludes": [
         "File"
@@ -714,7 +667,7 @@
     },
     {
       "@id": "schema:isBasedOn",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "isBasedOn",
       "schema:domainIncludes": [
         "File"
@@ -722,7 +675,7 @@
     },
     {
       "@id": "schema:exampleOfWork",
-      "@type": "rdfs:Class",
+      "@type": "rdfs:Property",
       "rdfs:label": "exampleOfWork",
       "schema:domainIncludes": [
         "File"

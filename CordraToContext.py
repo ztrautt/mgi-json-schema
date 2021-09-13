@@ -96,18 +96,25 @@ for c in sorted(list(allRefs)):
     try:
         refs = [r for r in jsonSchemas[c]["allOf"] if "$ref" in r]
         refs = [r for r in refs if r["$ref"].split("/")[-1] not in ("CordraObjectID", c)]
-        print(json.dumps(refs, indent=2))
 
     except:
         continue
 
     for ref in refs:
         
-        with open(ref['$ref'].split("#")[0], "r") as f:
+        with open(ref['$ref'].split('#')[0], "r") as f:
             data = json.load(f)
             data = dPath(data, ref["$ref"].split("#")[1])
 
         for pk, pv in data['properties'].items():
+            print(pk)
+
+            while "$ref" in pv:
+                print("expanding pv")
+                pvRef = pv['$ref']
+                with open(f"definition-schemas/{pvRef.split('#')[0]}", "r") as f:
+                    pv = json.load(f)
+                    pv = dPath(pv, pvRef.split("#")[1])
             
             propertyNode = {
                 "@id": f"schema:{pk}"
@@ -120,6 +127,8 @@ for c in sorted(list(allRefs)):
                 
             if 'items' in pv:
                 pv = pv.get('items')
+
+            print(json.dumps(pv, indent=2))
             
             # Check if reference
             r = dPath(pv, 'cordra/type/handleReference/types')
@@ -130,14 +139,15 @@ for c in sorted(list(allRefs)):
                 propertyNode['@type'] = "schema:URL"
             elif ("date" in pk.lower()):
                 propertyNode['@type'] = "xsd:date"
+            elif ('type' not in pv):
+                pass
             elif (pv['type'] == 'string'):
                 propertyNode['@type'] = "xsd:string"
             elif (pv['type'] == 'number'):
                 propertyNode['@type'] = "xsd:decimal" 
             
+            print(propertyNode)
             G_properties[pk] = propertyNode
-
-    break
 
 
 G = copy.deepcopy(G_classes) 

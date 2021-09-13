@@ -10,11 +10,98 @@
     "related": "skos:related",
     "exactMatch": "skos:exactMatch",
     "closeMatch": "skos:closeMatch",
-    "Action": {
-      "@id": "schema:Action"
-    },
     "Collection": {
       "@id": "schema:Collection"
+    },
+    "Comment": {
+      "@id": "schema:Comment"
+    },
+    "CordraGroup": {
+      "@id": "mat:CordraGroup"
+    },
+    "CordraObjectID": {
+      "@id": "mat:CordraObjectID"
+    },
+    "CordraUser": {
+      "@id": "mat:CordraUser"
+    },
+    "CreativeWork": {
+      "@id": "schema:CreativeWork"
+    },
+    "DataCatalog": {
+      "@id": "schema:DataCatalog"
+    },
+    "DataFormat": {
+      "@id": "mat:DataFormat"
+    },
+    "Dataset": {
+      "@id": "schema:Dataset"
+    },
+    "DefinedTerm": {
+      "@id": "schema:DefinedTerm"
+    },
+    "DefinedTermSet": {
+      "@id": "schema:DefinedTermSet"
+    },
+    "DutyAction": {
+      "@id": "mat:DutyAction"
+    },
+    "Experiment": {
+      "@id": "mat:Experiment"
+    },
+    "File": {
+      "@id": "mat:File"
+    },
+    "Instrument": {
+      "@id": "mat:Instrument"
+    },
+    "InstrumentAction": {
+      "@id": "mat:InstrumentAction"
+    },
+    "Material": {
+      "@id": "mat:Material"
+    },
+    "MaterialProperty": {
+      "@id": "mat:MaterialProperty"
+    },
+    "Organization": {
+      "@id": "schema:Organization"
+    },
+    "Person": {
+      "@id": "schema:Person"
+    },
+    "Place": {
+      "@id": "schema:Place"
+    },
+    "Process": {
+      "@id": "mat:Process"
+    },
+    "Product": {
+      "@id": "schema:Product"
+    },
+    "Project": {
+      "@id": "schema:Project"
+    },
+    "SoftwareApplication": {
+      "@id": "schema:SoftwareApplication"
+    },
+    "SoftwareSourceCode": {
+      "@id": "schema:SoftwareSourceCode"
+    },
+    "Study": {
+      "@id": "mat:Study"
+    },
+    "TabularData": {
+      "@id": "mat:TabularData"
+    },
+    "TabularDataPackage": {
+      "@id": "mat:TabularDataPackage"
+    },
+    "Thing": {
+      "@id": "schema:Thing"
+    },
+    "UnitOfMeasurement": {
+      "@id": "mat:UnitOfMeasurement"
     },
     "identifier": {
       "@id": "schema:identifier"
@@ -117,6 +204,102 @@
     },
     "spatial": {
       "@id": "schema:spatial",
+      "@type": "@id"
+    },
+    "manufacturer": {
+      "@id": "schema:manufacturer",
+      "@type": "@id"
+    },
+    "brand": {
+      "@id": "schema:brand",
+      "@type": "xsd:string"
+    },
+    "model": {
+      "@id": "schema:model",
+      "@type": "xsd:string"
+    },
+    "productID": {
+      "@id": "schema:productID",
+      "@type": "xsd:string"
+    },
+    "productionDate": {
+      "@id": "schema:productionDate",
+      "@type": "xsd:date"
+    },
+    "purchaseDate": {
+      "@id": "schema:purchaseDate",
+      "@type": "xsd:date"
+    },
+    "serialNumber": {
+      "@id": "schema:serialNumber",
+      "@type": "xsd:string"
+    },
+    "username": {
+      "@id": "mat:username",
+      "@type": "xsd:string"
+    },
+    "password": {
+      "@id": "mat:password",
+      "@type": "xsd:string"
+    },
+    "requirePasswordChange": {
+      "@id": "mat:requirePasswordChange"
+    },
+    "publicKey": {
+      "@id": "mat:publicKey"
+    },
+    "measurementTechnique": {
+      "@id": "schema:measurementTechnique",
+      "@type": "@id"
+    },
+    "variableMeasured": {
+      "@id": "schema:variableMeasured"
+    },
+    "parameterControlled": {
+      "@id": "mat:parameterControlled"
+    },
+    "conditionObserved": {
+      "@id": "mat:conditionObserved"
+    },
+    "material": {
+      "@id": "schema:material",
+      "@type": "@id"
+    },
+    "materialExtent": {
+      "@id": "schema:materialExtent"
+    },
+    "materialReference": {
+      "@id": "mat:materialReference",
+      "@type": "@id"
+    },
+    "materialReferenceExtent": {
+      "@id": "mat:materialReferenceExtent"
+    },
+    "includedInDataCatalog": {
+      "@id": "schema:includedInDataCatalog",
+      "@type": "@id"
+    },
+    "uploadDate": {
+      "@id": "schema:uploadDate",
+      "@type": "xsd:date"
+    },
+    "distribution": {
+      "@id": "schema:distribution"
+    },
+    "hasPart": {
+      "@id": "schema:hasPart",
+      "@type": "@id"
+    },
+    "isPartOf": {
+      "@id": "schema:isPartOf",
+      "@type": "@id"
+    },
+    "isBasedOn": {
+      "@id": "schema:isBasedOn",
+      "@type": "@id"
+    },
+    "exampleOfWork": {
+      "@id": "schema:exampleOfWork",
       "@type": "@id"
     }
   }
